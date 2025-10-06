@@ -92,7 +92,7 @@ useEffect(() => {
 
 useEffect(() => {
   setNgramLoading(true);
-  const filePath = `/public/data/ngrams_json/n=${ngramSize}_no_stopwords=${removeStopwords}.json`;
+  const filePath = `/public/data/ngrams_json/n%3D${ngramSize}_no_stopwords%3D${removeStopwords}.json`;
 
   fetch(filePath)
     .then((r) => r.json())
