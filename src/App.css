@@ -76,15 +76,25 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;   /* keep */
+  justify-content: flex-start;
+  padding: 20px 30px;
+}
+
+.description {
+  max-width: 900px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
 }
 
 .chart-container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 100px;
+  justify-content: center;   /* center charts horizontally */
+  margin-top: 20px;
 }
 
 .loading {

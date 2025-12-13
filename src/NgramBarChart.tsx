@@ -12,8 +12,8 @@ interface NgramBarChartProps {
 export default function NgramBarChart({ data }: NgramBarChartProps) {
   return (
     <BarChart
-      width={800}
-      height={600}
+      width={600}
+      height={400}
       data={data}
       margin={{ top: 20, right: 30, left: 20, bottom: 50 }}
     >

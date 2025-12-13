@@ -58,7 +58,7 @@ export default function App() {
   const [ngramLoading, setNgramLoading] = useState(true);
 
 useEffect(() => {
-  fetch("/public/data/IBC_Metadata_v1_mini.json")
+  fetch("https://tpdpqsgnkwhnrrsxmzrx.supabase.co/storage/v1/object/public/ngrams-data/IBC_metadata_v1_mini.json")
     .then((r) => r.json())
     .then((data: MetadataRow[]) => {
       setMetadata(data);
@@ -92,7 +92,7 @@ useEffect(() => {
 
 useEffect(() => {
   setNgramLoading(true);
-  const filePath = `/public/data/ngrams_json/n=${ngramSize}_no_stopwords=${removeStopwords}.json`;
+  const filePath = `https://tpdpqsgnkwhnrrsxmzrx.supabase.co/storage/v1/object/public/ngrams-data/n=${ngramSize}_no_stopwords=${removeStopwords ? "True" : "False"}.json`;
 
   fetch(filePath)
     .then((r) => r.json())
@@ -160,6 +160,9 @@ useEffect(() => {
           <label><input type="checkbox" checked={removeStopwords} onChange={(e) => setRemoveStopwords(e.target.checked)} className="filter-select" />Exclude Stopwords</label>
       </div>
         <div className="content">
+          <div className="description">
+            This dashboard is designed to explore word usage patterns in the Ideological Books Corpus, a collection of 500 American political books. Use the filters on the left (title, author, ideology group, topic, year, and n‑gram size) to subset the corpus and update the charts. The bar chart shows the most frequent tokens in the selected subset; higher bars indicate words that appear more often relative to others. The word cloud provides a visual overview of the same frequencies, where larger words are more common. Together, they help compare language across authors, ideologies, topics, and time.
+          </div>
         {metadataLoading || ngramLoading ? (
         <div className="loading">Loading filters and charts...</div>
         ) : (

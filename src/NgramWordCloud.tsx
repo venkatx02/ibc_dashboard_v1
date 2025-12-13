@@ -23,7 +23,7 @@ export default function NgramWordCloud({ data, minPx = 14, maxPx = 72 }: Props) 
   };
 
   return (
-    <div style={{width: "800px", height: "600px",}}>
+    <div style={{width: "600px", height: "400px",}}>
     <WordCloud data={data.map(({ ngram, freq }) => ({ text: ngram, value: freq }))} width={600} height={400} fontSize={(d) => scale(d.value)} rotate={() => 0} />
     </div>
   );
