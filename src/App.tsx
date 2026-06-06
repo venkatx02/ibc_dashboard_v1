@@ -58,7 +58,7 @@ export default function App() {
   const [ngramLoading, setNgramLoading] = useState(true);
 
 useEffect(() => {
-  fetch("https://tpdpqsgnkwhnrrsxmzrx.supabase.co/storage/v1/object/public/ngrams-data/IBC_metadata_v1_mini.json")
+  fetch("https://mydyekyqspuzynwqcnvo.supabase.co/storage/v1/object/public/ibc_words/ngrams-data/IBC_metadata_v1_mini.json")
     .then((r) => r.json())
     .then((data: MetadataRow[]) => {
       setMetadata(data);
@@ -92,7 +92,7 @@ useEffect(() => {
 
 useEffect(() => {
   setNgramLoading(true);
-  const filePath = `https://tpdpqsgnkwhnrrsxmzrx.supabase.co/storage/v1/object/public/ngrams-data/n=${ngramSize}_no_stopwords=${removeStopwords ? "True" : "False"}.json`;
+  const filePath = `https://mydyekyqspuzynwqcnvo.supabase.co/storage/v1/object/public/ibc_words/ngrams-data/n=${ngramSize}_no_stopwords=${removeStopwords ? "True" : "False"}.json`;
 
   fetch(filePath)
     .then((r) => r.json())
